@@ -85,7 +85,7 @@ function NCard(props) {
                 
                 <br/>
                 {/* Buy  */}
-                <Button style={{left : 200 , position :"absolute", padding:"10" , margin:"10"}}  variant="contained" href={post.permalink} target="_blank" >Buy Now</Button>
+                <Button style={{left : 200 , position :"absolute", padding:"10" , margin:"10"}}  variant="contained" href={selected.permalink} target="_blank" >Buy Now</Button>
                 <br/>
                 </Box>
             </Modal> }
