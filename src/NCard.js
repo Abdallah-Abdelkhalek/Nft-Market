@@ -70,7 +70,7 @@ function NCard(props) {
                 <Typography id="modal-modal-title" variant="h6" component="h1" style={{fontWeight:"bold"}}>
                     {selected.name}
                 </Typography>
-                <hr/>
+                <br/>
 
                 {/* Description */}
                 <Typography id="modal-modal-description" >
