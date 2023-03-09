@@ -20,9 +20,8 @@ function NCard(props) {
     .filter(filter => filter.image_url !== null && filter.name !== null && filter.collection.description !== null)
     .map(post => (
         // if(post.collection.image_url === "" || post.name=== "" || post.collection.description === "")
-            <Grid key={post.id} item xs={12} sm={6} md={4} lg={3} >
-                <Button onClick={()=>{handleOpen(); setSelected(post);}}>
-                    <Card className="card" sx={{ width: 250 , minHeight: 380 , borderRadius:"20px"}}>
+            <Grid style={{ display:"flex", alignItems: "center",justifyContent: "center"  }} key={post.id} item xs={12} sm={6} md={4} lg={3} >
+                    <Card onClick={()=>{handleOpen(); setSelected(post);}} className="card" sx={{ width: 250 , minHeight: 380 , borderRadius:"20px"}}>
                         <CardActionArea>
                             {/* card image */}
                             {/* <CardMedia component="img" height="140" image={post.collection.image_url} style={{}} alt="NFT Image" /> */}
@@ -39,7 +38,6 @@ function NCard(props) {
                             </CardContent>  
                         </CardActionArea>
                     </Card>
-                </Button>
             </Grid>
         ))
 
@@ -54,7 +52,7 @@ function NCard(props) {
             </AppBar>
         </Box>
 
-        <Grid container spacing={2}>
+        <Grid  container spacing={2}>
             {props && post}
 
             { open && 
@@ -64,7 +62,7 @@ function NCard(props) {
                 <Box sx={style}> 
 
                 {/* Image */}
-                <img src={selected.collection.image_url}  alt='NFT' style={{ width:"450px" , height:"350px",marginBottom:1, borderRadius:"20px", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",objectFit: "fill"}} /> 
+                <img src={selected.collection.image_url}  alt='NFT' style={{ width:window.innerWidth/2 , height:"350px",marginBottom:1, borderRadius:"20px", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",objectFit: "fill"}} /> 
 
                 {/* Title */}
                 <Typography id="modal-modal-title" variant="h6" component="h1" style={{fontWeight:"bold"}}>
@@ -85,8 +83,8 @@ function NCard(props) {
                 
                 <br/>
                 {/* Buy  */}
-                <Button style={{left : 200 , position :"absolute", padding:"10" , margin:"10"}}  variant="contained" href={selected.permalink} target="_blank" >Buy Now</Button>
-                <br/>
+                <Button style={{display: "flex", alignItems: "center",justifyContent: "center"  }}  variant="contained" href={selected.permalink} target="_blank" >Buy Now</Button>
+                
                 </Box>
             </Modal> }
         </Grid>
@@ -101,7 +99,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 450,
+    width: window.innerWidth/2 + 30 ,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
